@@ -1,7 +1,31 @@
-<?php get_header(); ?>
+<?php get_template_part("parts_Head"); ?>
+<body>
+  <div class="l-page">
+    <?php get_header(); ?>
+    <main class="l-contents">
+      <?php $slug_name = $post->post_name; ?>
+      <h2>archive</h2>
 
-<main class="content">
-  <h1>archive</h1>
-</main>
+      <?php
+      /* （ステップ1）データの取得 WP_Queryを使用した場合サンプル */
+      $query = new WP_Query(
+      array(
+         'posts_per_page' => 3, // Post数
+      )
+      );
+      ?>
 
-<?php get_footer(); ?>
+      <?php
+      /* （ステップ2）データの表示 */
+      if ( $query->have_posts() ) : ?>
+        <?php while ( $query->have_posts() ) : $query->the_post();?>
+          <?php the_content(); ?>
+        <?php endwhile; ?>
+      <?php endif; ?>
+    </main>
+    <?php get_footer(); ?>
+    <?php get_template_part("parts_Background"); ?>
+  </div>
+  <?php get_template_part("parts_Scripts"); ?>
+</body>
+</html>

@@ -1,4 +1,6 @@
-<?php get_template_part("parts_Head"); ?>
+<?php
+/* Template Name: Dummy */
+get_template_part("parts_Head"); ?>
 <body>
   <div class="l-page">
     <?php get_header(); ?>
