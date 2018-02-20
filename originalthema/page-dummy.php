@@ -1,6 +1,6 @@
 <?php
 /* Template Name: Dummy */
-get_template_part("parts_Head"); ?>
+get_template_part("parts_head"); ?>
 <body>
   <div class="l-page">
     <?php get_header(); ?>
@@ -12,8 +12,8 @@ get_template_part("parts_Head"); ?>
       <?php endwhile; ?>
     </main>
     <?php get_footer(); ?>
-    <?php get_template_part("parts_Background"); ?>
+    <?php get_template_part("parts_background"); ?>
   </div>
-  <?php get_template_part("parts_Scripts"); ?>
+  <?php get_template_part("parts_scripts"); ?>
 </body>
 </html>
